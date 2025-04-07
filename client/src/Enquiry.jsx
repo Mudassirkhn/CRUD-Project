@@ -201,7 +201,7 @@ export default function Enquiry() {
       // Update existing enquiry
       axios
         .put(
-          `http://localhost:8020/api/website/enquiry/update/${formData._id}`,
+          `https://crud-project-server.onrender.com/api/website/enquiry/update/${formData._id}`,
           formData
         )
         .then((res) => {
@@ -215,7 +215,7 @@ export default function Enquiry() {
     } else {
       // Insert new enquiry
       axios
-        .post("http://localhost:8020/api/website/enquiry/insert", formData)
+        .post("https://crud-project-server.onrender.com/api/website/enquiry/insert", formData)
         .then((res) => {
           toast.success("Enquiry saved successfully!");
           resetForm();
@@ -239,7 +239,7 @@ export default function Enquiry() {
 
   const getAllenquiry = () => {
     axios
-      .get("http://localhost:8020/api/website/enquiry/view")
+      .get("https://crud-project-server.onrender.com/api/website/enquiry/view")
       .then((res) => {
         if (res.data.status) {
           setEnquiryList(res.data.enquiryList);
