@@ -12,7 +12,7 @@ export function EnquiryList({ data, getAllenquiry, Swal , setFormData }) {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`http://localhost:8020/api/website/enquiry/delete/${delid}`)
+          .delete(`https://crud-project-server.onrender.com/api/website/enquiry/delete/${delid}`)
           .then((res) => {
             toast.success("Enquiry Deleted Sucessfully");
             getAllenquiry();
@@ -22,7 +22,7 @@ export function EnquiryList({ data, getAllenquiry, Swal , setFormData }) {
   };
 
   let editRow=(edited)=>{
-    axios.get (`http://localhost:8020/api/website/enquiry/single/${edited}`)
+    axios.get (`https://crud-project-server.onrender.com/api/website/enquiry/single/${edited}`)
     .then((res)=>{
       let data = res.data
       setFormData(data.enquiry)
